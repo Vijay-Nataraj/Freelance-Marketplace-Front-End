@@ -14,7 +14,8 @@ const authServices = {
       const clientID = user._id;
 
       if (token) {
-        localStorage.setItem("token", token);
+        // Store the token in localStorage (or sessionStorage if needed)
+        localStorage.setItem("token", token); // Store the JWT
         localStorage.setItem("role", role);
         localStorage.setItem("freelancerID", freelancerID);
         localStorage.setItem("clientID", clientID);
@@ -22,9 +23,6 @@ const authServices = {
         localStorage.setItem("clientname", clientname);
         localStorage.setItem("email", email);
       }
-
-      // console.log(clientname);
-      // console.log(username);
 
       return { ...response.data, role, freelancerID, username, email };
     } catch (error) {

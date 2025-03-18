@@ -7,8 +7,9 @@ const instance = axios.create({
   timeout: 3000,
   headers: {
     "Content-Type": "application/json",
+    Authorization: `Bearer ${localStorage.getItem("token")}`,
   },
-  credentials: "include",
+  withCredentials: false, // No need for cookies
 });
 
 export default instance;
